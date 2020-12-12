@@ -1,0 +1,60 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> Inscription
+        </h1>
+        <%- include("./partials/messages.ejs") -%>
+        <form action="/users/register" method="POST">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input
+              type="name"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Nom"
+              value="<%= typeof name != 'undefined' ? name : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Email"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Mot de passe"
+              value="<%= typeof password != 'undefined' ? password : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirmez votre Mot de passe</label>
+            <input
+              type="password"
+              id="password1"
+              name="password1"
+              class="form-control"
+              placeholder="Confirmation du mot de passe"
+              value="<%= typeof password1 != 'undefined' ? password1 : '' %>"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            S'inscrire
+          </button>
+        </form>
+        <p class="lead mt-4">Vous avez dèjà un compte ? <a href="/users/login">Connexion</a></p>
+      </div>
+    </div>
+  </div>
